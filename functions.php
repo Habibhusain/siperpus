@@ -252,4 +252,113 @@ require_once "config/config.php";
     }
 
     
+    // Fungsi untuk menambahkan buku
+    function addBook($judul_buku, $isbn, $jenis_buku, $jumlah_halaman, $tahun_terbit, $jumlah_stok, $tanggal_masuk, $klasifikasi, $no_rak, $file_ebook, $gambar_cover) {
+        global $conn;
+        $stmt = $conn->prepare("INSERT INTO siperpus_buku (judul_buku, isbn, jenis_buku, jumlah_halaman, tahun_terbit, jumlah_stok, tanggal_masuk, klasifikasi, no_rak, file_ebook, gambar_cover) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssisisssss", $judul_buku, $isbn, $jenis_buku, $jumlah_halaman, $tahun_terbit, $jumlah_stok, $tanggal_masuk, $klasifikasi, $no_rak, $file_ebook, $gambar_cover);
+        $stmt->execute();
+        $stmt->close();
+    }
+
+    // Fungsi untuk mendapatkan semua buku
+    function getAllBooks() {
+        global $conn;
+        $result = $conn->query("SELECT * FROM siperpus_buku"); // Ganti buku menjadi siperpus_buku
+        if (!$result) {
+            die("Query failed: " . $conn->error); // Menampilkan kesalahan jika query gagal
+        }
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    // Fungsi untuk mendapatkan buku berdasarkan ID
+    function getBookById($id) {
+        global $conn;
+        $stmt = $conn->prepare("SELECT * FROM siperpus_buku WHERE id = ?");
+
+        if (!$stmt) {
+            die("Prepare failed: " . $conn->error);
+        }
+
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if (!$result) {
+            die("Query failed: " . $stmt->error);
+        }
+
+        return $result->fetch_assoc();
+    }
+
+    // Fungsi untuk memperbarui buku
+    function updateBook($id, $judul_buku, $isbn, $jenis_buku, $jumlah_halaman, $tahun_terbit, $jumlah_stok, $tanggal_masuk, $klasifikasi, $no_rak, $file_ebook, $gambar_cover) {
+        global $conn;
+        $stmt = $conn->prepare("UPDATE siperpus_buku SET judul_buku = ?, isbn = ?, jenis_buku = ?, jumlah_halaman = ?, tahun_terbit = ?, jumlah_stok = ?, tanggal_masuk = ?, klasifikasi = ?, no_rak = ?, file_ebook = ?, gambar_cover = ? WHERE id = ?");
+
+        if (!$stmt) {
+            die("Prepare failed: " . $conn->error);
+        }
+
+        $stmt->bind_param("sssisisssssi", $judul_buku, $isbn, $jenis_buku, $jumlah_halaman, $tahun_terbit, $jumlah_stok, $tanggal_masuk, $klasifikasi, $no_rak, $file_ebook, $gambar_cover, $id);
+        
+        if (!$stmt->execute()) {
+            die("Execute failed: " . $stmt->error);
+        }
+
+        $stmt->close();
+    }
+
+    // Fungsi untuk menghapus buku
+    function deleteBook($id) {
+        global $conn;
+        $stmt = $conn->prepare("DELETE FROM siperpus_buku WHERE id = ?");
+
+        if (!$stmt) {
+            die("Prepare failed: " . $conn->error);
+        }
+
+        $stmt->bind_param("i", $id);
+        
+        if (!$stmt->execute()) {
+            die("Execute failed: " . $stmt->error);
+        }
+
+        $stmt->close();
+    }
+
+    // Fungsi untuk mengupload file
+    function uploadFile($file, $targetDir) {
+        $targetFile = $targetDir . basename($file['name']);
+        
+        if (move_uploaded_file($file['tmp_name'], $targetFile)) {
+            return $targetFile;
+        } else {
+            die("File upload failed: " . $file['error']);
+        }
+    }
+
+    // Fungsi untuk menambahkan buku dengan upload file
+    function addBookWithUpload($judul_buku, $isbn, $jenis_buku, $jumlah_halaman, $tahun_terbit, $jumlah_stok, $tanggal_masuk, $klasifikasi, $no_rak, $file_ebook, $gambar_cover) {
+        // Tentukan direktori tujuan untuk file yang diupload
+        $uploadDir = 'uploads/';
+        
+        // Upload file eBook jika ada
+        if ($file_ebook['name']) {
+            $file_ebook_path = uploadFile($file_ebook, $uploadDir);
+        } else {
+            $file_ebook_path = null; // Atau bisa menggunakan default
+        }
+
+        // Upload gambar cover jika ada
+        if ($gambar_cover['name']) {
+            $gambar_cover_path = uploadFile($gambar_cover, $uploadDir);
+        } else {
+            $gambar_cover_path = null; // Atau bisa menggunakan default
+        }
+
+        // Tambahkan buku ke database
+        addBook($judul_buku, $isbn, $jenis_buku, $jumlah_halaman, $tahun_terbit, $jumlah_stok, $tanggal_masuk, $klasifikasi, $no_rak, $file_ebook_path, $gambar_cover_path);
+    }
+        
 
