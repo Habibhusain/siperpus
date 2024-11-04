@@ -22,9 +22,6 @@ include 'header.php';
         </div>
         <table id="pengarangTable" class="pure-table pure-table-bordered">
             <thead>
-                <?php
-                $ambil_data_pengarang = ambil_data_pengarang();g
-                ?>
                 <tr>
                     <th>No</th>
                     <th>Nama</th>
@@ -36,31 +33,27 @@ include 'header.php';
                 </tr>
             </thead>
             <tbody>
-                <!-- Data Dummy -->
+                <?php
+                    $ambil_data_pengarang = ambil_data_pengarang();
+                    $no = 1;
+                    foreach($ambil_data_pengarang as $data_pengarang):
+                    ?>
                 <tr>
-                    <td>1</td>
-                    <td>Kevin</td>
-                    <td>Jakarta</td>
-                    <td>1985-04-12</td>
-                    <td>081234567890</td>
-                    <td>ahmad@example.com</td>
+                    <td><?php echo $no;?></td>
+                    <td><?php echo['nama_pengarang'] ?></td>
+                    <td><?php echo['tempat_lahir'] ?></td>
+                    <td><?php echo date('d-m-Y', strtotime(['tanggal_lahir'])) ?></td>
+                    <td><?php echo['no_wa'] ?></td>
+                    <td><?php echo['email'] ?></td>
                     <td class="action-buttons">
                         <a href="edit_pengarang.php?id=1">Edit</a>
                         <button>Hapus</button>
                     </td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Salman</td>
-                    <td>Jakarta</td>
-                    <td>1985-04-12</td>
-                    <td>081234567890</td>
-                    <td>ahmad@example.com</td>
-                    <td class="action-buttons">
-                        <a href="edit_pengarang.php?id=1">Edit</a>
-                        <button>Hapus</button>
-                    </td>
-                </tr>
+                <?php
+                $no++;
+                endforeach;
+                ?>
             </tbody>
         </table>
     </div>
