@@ -163,6 +163,15 @@ require_once "config/config.php";
         }
     }
 
+    function delete_penerbit()
+    {
+        if(isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $sql_delete = "DELETE FROM siperpus_penerbit WHERE id='$id'";
+            $eksekusi = connect_db()->query($sql_delete);
+            return $eksekusi;
+        }
+    }
     function get_list_anggota() {
 
         global $db;
@@ -241,3 +250,6 @@ require_once "config/config.php";
 
         return $result;
     }
+
+    
+

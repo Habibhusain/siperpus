@@ -37,39 +37,35 @@ include 'header.php';
                         </tr>
                     </thead>
                     <tbody>
+                    <?php if(count(get_list_penerbit()) > 0) : ?> 
+                        <?php $no = 1; foreach(get_list_penerbit() as $penerbit) : ?>
                         <tr>
-                            <td>1</td>
-                            <td>Dhika</td>
-                            <td>jakarta</td>
-                            <td>0891280031</td>
-                            <td>Dhika@gmail.com</td>
-                            <td>
-                                <a href="edit_penerbit.html" class="button-success pure-button">Edit</a>
-                                <a href="hapus_penerbit.html" class="button-error pure-button">Hapus</a>
-                            </td>
+                        <td><?php echo $no; ?></td>
+                        <td><?php echo $penerbit['nama_penerbit']; ?></td>
+                        <td><?php echo $penerbit['alamat_penerbit']; ?></td>
+                        <td><?php echo $penerbit['no_wa']; ?></td>
+                        <td><?php echo $penerbit['email']; ?></td>
+                        <td>
+                            <a
+                            href="#"
+                            class="pure-button pure-button-print">
+                            Cetak Kartu
+                            </a>
+                            <a
+                            href="#"
+                            class="pure-button pure-button-edit">
+                            Edit
+                            </a>
+                            <a
+                            href="daftar_penerbit.php?id=<?php echo $penerbit['id']; ?>"
+                            onclick="return confirm('Yakin ingin menghapus penerbit ini?')"
+                            class="pure-button pure-button-delete">
+                            Hapus
+                            </a>
+                        </td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Kevin</td>
-                            <td>jakarta</td>
-                            <td>0891223831</td>
-                            <td>Kevin@gmail.com</td>
-                            <td>
-                                <a href="edit_penerbit.html" class="button-success pure-button">Edit</a>
-                                <a href="hapus_penerbit.html" class="button-error pure-button">Hapus</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Aidil</td>
-                            <td>jakarta</td>
-                            <td>0891332831</td>
-                            <td>Aidil@gmail.com</td>
-                            <td>
-                                <a href="edit_penerbit.html" class="button-success pure-button">Edit</a>
-                                <a href="hapus_penerbit.html" class="button-error pure-button">Hapus</a>
-                            </td>
-                        </tr>
+                        <?php $no++; endforeach; ?>
+                        <?php endif; ?>
                     </tbody>
                 </table>
             </div>

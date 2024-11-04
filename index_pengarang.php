@@ -40,11 +40,11 @@ include 'header.php';
                     ?>
                 <tr>
                     <td><?php echo $no;?></td>
-                    <td><?php echo['nama_pengarang'] ?></td>
-                    <td><?php echo['tempat_lahir'] ?></td>
-                    <td><?php echo date('d-m-Y', strtotime(['tanggal_lahir'])) ?></td>
-                    <td><?php echo['no_wa'] ?></td>
-                    <td><?php echo['email'] ?></td>
+                    <td><?php echo $data_pengarang['nama_pengarang']; ?></td>
+                    <td><?php echo $data_pengarang['tempat_lahir']; ?></td>
+                    <td><?php echo date('d-m-Y', strtotime($data_pengarang['tanggal_lahir'])); ?></td>
+                    <td><?php echo $data_pengarang['no_wa']; ?></td>
+                    <td><?php echo $data_pengarang['email']; ?></td>
                     <td class="action-buttons">
                         <a href="edit_pengarang.php?id=1">Edit</a>
                         <button>Hapus</button>
