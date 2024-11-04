@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.custom-wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    box-shadow: inset;
+    border-radius: 5px;
+}
+.page-header {
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+.pure-table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.pure-button-success {
+    background: rgb(28, 184, 65);
+    color: white;
+}
+.pure-button-warning {
+    background: rgb(223, 117, 20);
+    color: white;
+}
+.pure-button-error {
+    background: rgb(202, 60, 60);
+    color: white;
+}
+.pure-button-small {
+    font-size: 70%;
+}
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.status-tersedia {
+    background: rgb(28, 184, 65);
+    color: white;
+}
+.status-dipinjam {
+    background: rgb(223, 117, 20);
+    color: white;
+}
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.search-box {
+    display: flex;
+    align-items: center;
+}
+.search-box label {
+    margin-right: 10px;
+}

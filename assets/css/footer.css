@@ -1,0 +1,88 @@
+ /* Styling untuk seluruh halaman */
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+}
+
+.content {
+    flex: 1;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #387478;
+    color: #fff;
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.footer-links li {
+    display: inline;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 15px;
+}
+
+.footer-links a:hover {
+    color: #CDE8E5;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 18px;
+}
+
+.social-icons a:hover {
+    color: #CDE8E5;
+}
+
+.copyright {
+    font-size: 12px;
+    color:white;
+    margin-top: 10px;
+    font-size:15px;
+}
+
+/* Responsive untuk layar kecil */
+@media (max-width: 600px) {
+    .footer .footer-content {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -1,0 +1,127 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+.navbar {
+    background-color: rgb(3, 177, 168);
+    padding: 10px;
+
+}
+#main {
+    margin-top: 20px; 
+    padding: 20px; 
+}
+.navbar .pure-menu-link {
+    color: black; 
+}
+
+.navbar .pure-menu-link:hover {
+    color: #333; 
+}
+.header {
+    text-align: center;
+}
+.wrap {
+    padding: 20px;
+    overflow-x: auto; 
+}
+
+.card .button-primary {
+    background: rgb(66, 184, 221);
+    color: white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    text-align: right;
+}
+.card {
+    max-width: 90%;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+.card-header {
+    padding: 15px;
+    background-color: rgb(61, 192, 185);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+}
+.card-content {
+    padding: 20px;
+}
+.card-content table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.card-content th, .card-content td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+.card-content th {
+    background-color: rgb(3, 177, 168);
+    color: white;
+}
+.card .button-success {
+    background: rgb(28, 184, 65); /* green */
+    color: white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+.card .button-error {
+    background: rgb(202, 60, 60); /* red */
+    color: white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+.form-container .pure-button{
+    margin-top: 20px;
+}
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+.form-actions {
+    margin-bottom: 10px; /* Memberikan jarak bawah antara tombol dan tautan */
+    text-align: center;
+}
+
+.link-back {
+    display: block; /* Menjadikannya elemen blok untuk memastikannya di bawah tombol */
+    text-align: center; /* Agar teks berada di tengah */
+    color: #007bff; /* Warna teks */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    margin-top: 15px;
+}
+
+.link-back:hover {
+    text-decoration: underline; /* Menambahkan garis bawah saat hover */
+}
+/* Responsive styles */
+@media (max-width: 600px) {
+    .navbar {
+        text-align: center;
+    }
+    .pure-menu-list {
+        display: block; /* Stack menu items vertically */
+    }
+    .pure-menu-item {
+        display: block;
+        margin: 5px 0;
+    }
+    .wrap {
+        padding: 10px;
+    }
+}

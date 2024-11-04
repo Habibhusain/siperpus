@@ -1,0 +1,117 @@
+/* Styling Umum */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    
+}
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.container,
+.form-container {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Header Umum */
+.container h2,
+.form-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.container-header{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+/* Tombol Tambah */
+.add-button {
+    width: fit-content;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: right;
+}
+
+.add-button:hover {
+    background-color: #218838;
+}
+
+/* Tabel */
+.pure-table {
+    width: 100%;
+    border-collapse: collapse;
+    
+    margin-top: 40px;
+}
+
+.pure-table th {
+    background-color: #007bff;
+    color: #fff;
+    text-align: left;
+    padding: 12px;
+    font-weight: 600;
+}
+
+.pure-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd
+}
+
+.pure-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+/* Tombol aksi dalam tabel */
+.action-buttons a,
+.action-buttons button {
+    padding: 5px 9px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.action-buttons a {
+    background-color: #007bff;
+}
+
+.action-buttons button {
+    background-color: #dc3545;
+}
+
+.action-buttons button:hover,
+.action-buttons a:hover {
+    opacity: 0.9;
+}
+
+/* Form Styling (Add dan Edit) */
+.pure-form .pure-input-1 {
+    width: 100%;
+}
+
+.form-actions {
+    text-align: right;
+    margin-top: 20px;
+}

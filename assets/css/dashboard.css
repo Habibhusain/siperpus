@@ -1,0 +1,113 @@
+/* Reset and global styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* 
+Hapus efek hover dan border
+.pure-menu-link:hover {
+    background-color: transparent; Tidak ada latar belakang saat hover
+    color: white; Pastikan warna tetap putih saat hover
+    border: none; Pastikan tidak ada border
+} */
+
+
+/* User Info */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logout-button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+}
+
+/* Welcome Section Styling */
+.welcome-section {
+    background-color: #e9ecef;
+    padding: 20px;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 5px;
+}
+
+.welcome-section h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.welcome-section p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Stats Section Styling */
+.stats {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 800px;
+    gap: 10px;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    flex: 1;
+}
+
+.stat-card-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 5px;
+    gap: 15px; /* Menambahkan jarak antara angka dan ikon */
+}
+
+.stat-card h3 {
+    font-size: 2.5em;
+    margin-left: auto; /* Menempatkan angka di sebelah kiri */
+}
+
+.stat-card i {
+    font-size: 2em;
+    margin-right: auto; /* Menempatkan ikon di sebelah kanan */
+}
+
+.blue {
+    background-color: #007bff;
+}
+
+.red {
+    background-color: #dc3545;
+}
+
+.yellow {
+    background-color: #ffc107;
+}
+
+.light-blue {
+    background-color: #17a2b8;
+}
